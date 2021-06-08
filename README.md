@@ -52,8 +52,9 @@ INSERT INTO products (country_id, name) VALUES ("ITA","Pizza");
 
 ## Spring boot
 
--Create a project following screenshots saved in /spring boot project
--add in src/main/resources/application.properties file 
+-Create a project following screenshots saved in /spring boot project  
+
+-add in src/main/resources/application.properties file   
 ```sh
 spring.datasource.url=jdbc:mysql://localhost:3306/nations
 spring.datasource.username=root
