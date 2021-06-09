@@ -60,3 +60,7 @@ spring.datasource.url=jdbc:mysql://localhost:3306/nations
 spring.datasource.username=root
 spring.datasource.password=yourpassword
 ```
+
+## Spring MVC with hibernate
+- Be sure to have eclipse updated
+- Create a new dynamic web project
