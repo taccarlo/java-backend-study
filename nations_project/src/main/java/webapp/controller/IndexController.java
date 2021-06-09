@@ -9,12 +9,17 @@ public class IndexController {
 
 	@RequestMapping(value="index")
 	public String getWelcome(Model model) {
-		return welcomePage(model);
+		model.addAttribute("header","Welcome in Nation Website");
+		model.addAttribute("hello", "Hello World");
+		return "index";
 	}
 	
 	@RequestMapping(value="/")
 	public String getWelcome2(Model model){
-		return welcomePage(model);
+		model.addAttribute("header","Welcome in Nation Website");
+		model.addAttribute("hello", "Hello World");
+		return "index";
+		//return welcomePage(model);
 	}
 	
 	public String welcomePage(Model model) {
