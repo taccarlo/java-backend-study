@@ -61,6 +61,8 @@ spring.datasource.username=root
 spring.datasource.password=yourpassword
 ```
 
-## Spring MVC with hibernate
-- Be sure to have eclipse updated
-- Create a new dynamic web project
+## Spring MVC eclipse 2021
+- Be sure to have eclipse  (useful for example to be able to see tomcat servers in servers section)
+- It's more easy install tomcat server directly from eclipse indicating a directory where download the server files.
+- to resolve 404 problem try to go to stackoverflow question n 11227395, where explains to add "Maven dependency" in the deployment assembly
+- If is not present run on server option transform the project going on properties / project facets and add option dynamic web module.
