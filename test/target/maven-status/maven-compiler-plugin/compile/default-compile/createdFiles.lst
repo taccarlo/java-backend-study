@@ -1,0 +1,3 @@
+com\xantrix\webapp\config\DispatcherServletInitializer.class
+com\xantrix\webapp\controller\IndexController.class
+com\xantrix\webapp\config\WebApplicationContextConfig.class
