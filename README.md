@@ -66,3 +66,9 @@ spring.datasource.password=yourpassword
 - It's more easy install tomcat server directly from eclipse indicating a directory where download the server files.
 - to resolve 404 problem try to go to stackoverflow question n 11227395, where explains to add "Maven dependency" in the deployment assembly
 - If is not present run on server option transform the project going on properties / project facets and add option dynamic web module.
+
+### tutorial links
+mvc hello world done following this video tutorial in italian
+https://www.youtube.com/watch?v=JZXFDHmGopA&t=468s
+and this tutorial 
+https://crunchify.com/simplest-spring-mvc-hello-world-example-tutorial-spring-model-view-controller-tips/
