@@ -78,31 +78,107 @@ CREATE TABLE IF NOT EXISTS Orario (
 #### populating_database.sql
 ```sh
 INSERT INTO 
-museo.Museo 
+Museo 
 (Nome, Citta, Indirizzo, NumeroTel, GiornoChiusura, PrezzoAdulti, PrezzoRidotto, SitoInternet) 
 VALUES 
 ("Museo di Grezzana","Grezzana","Via Roma", 045908333, "Lunedì", 20.3, 19.2,"www.museogrezzana.com");
 
 INSERT INTO 
-museo.Museo 
+Museo 
+(Nome, Citta, Indirizzo, NumeroTel, GiornoChiusura, PrezzoAdulti, PrezzoRidotto, SitoInternet) 
+VALUES 
+("Museo di Verona","Verona","Via Mazzini", 045922333, "Lunedì", 50.3, 39.2,"www.museoverona.com");
+
+INSERT INTO 
+Museo 
 (Nome, Citta, Indirizzo, NumeroTel, GiornoChiusura, PrezzoAdulti, PrezzoRidotto, SitoInternet) 
 VALUES 
 ("Museo di Malcesine","Malcesine","Via Garibaldi", 045928333, "Martedì", 30.3, 20.2,"www.museomalcesine.com");
 
 INSERT INTO 
-museo.Mostra 
+Mostra 
 (Titolo, InizioEsposizione, FineEsposizione, PrezzoIntero, PrezzoRidotto, Museo, Citta) 
 VALUES 
 ("Mostra di pittura","2021-06-18T10:34:09","2021-06-18T20:34:09", 28.1, 30.2, "Museo di Grezzana", "Grezzana");
 
 INSERT INTO 
-museo.Mostra 
+Mostra 
 (Titolo, InizioEsposizione, FineEsposizione, PrezzoIntero, PrezzoRidotto, Museo, Citta) 
 VALUES 
 ("Mostra di statue","2021-07-18T10:34:09","2021-07-18T20:34:09", 28.1, 30.2, "Museo di Malcesine", "Malcesine");
+
+#### Populating Opera
+INSERT INTO 
+Opera 
+(Nome , CognomeAutore , NomeAutore , Epoca , Anno , Museo , Citta ) 
+VALUES 
+("Il barbiere di Siviglia","Rossini", "Gioacchino","1770", 2006, "Museo di Malcesine", "Malcesine");
+
+INSERT INTO 
+Opera 
+(Nome , CognomeAutore , NomeAutore , Epoca , Anno , Museo , Citta ) 
+VALUES 
+("La gazza ladra","Rossini", "Gioacchino","1780", 2008, "Museo di Malcesine", "Malcesine");
+
+INSERT INTO 
+Opera 
+(Nome , CognomeAutore , NomeAutore , Epoca , Anno , Museo , Citta ) 
+VALUES 
+("La gazza ladra","Rossini", "Gioacchino","1780", 2008, "Museo di Grezzana", "Grezzana");
+
+INSERT INTO 
+Opera 
+(Nome , CognomeAutore , NomeAutore , Epoca , Anno , Museo , Citta ) 
+VALUES 
+("Il magnifico spettacolo","Mario", "Rossi","1990", 2000, "Museo di Grezzana", "Grezzana");
+
+INSERT INTO 
+Orario  
+( Giorno , OrarioApertura , OrarioChiusura  , Museo , Citta ) 
+VALUES 
+("2021-06-18","08:00:00","18:00:00","Museo di Malcesine", "Malcesine");
+
+
+INSERT INTO 
+Orario  
+( Giorno , OrarioApertura , OrarioChiusura  , Museo , Citta ) 
+VALUES 
+("2021-06-18","09:00:00","19:00:00","Museo di Grezzana", "Grezzana");
 ```
 
 #### Answer of the exercises
-Visualizzare il nome la città e l'indirizzo di tutti i musei
-1. SELECT Nome, Citta, Indirizzo FROM museo;
-Visualizzare tutte le informazioni sulle mostre;
+1. Visualizzare il nome la città e l'indirizzo di tutti i musei.
+SELECT Nome, Citta, Indirizzo FROM museo;
+
+2. Visualizzare tutte le informazioni sulle mostre.
+SELECT * FROM Mostra;
+
+3. Visualizzare il nome e le informazioni sull’autore (Nome, Cognome) di tutte le opere
+SELECT DISTINCT NomeAutore, CognomeAutore FROM opera;
+
+4. Visualizzare il contenuto della tabella Museo
+SELECT * FROM museo;
+
+5. Visualizzare il nome e il giorno di chiusura di tutti i musei di Verona
+SELECT Nome, GiornoChiusura FROM museo where Citta = "Verona";
+
+6. Visualizzare il titolo e il prezzo di tutte le mostre presenti a Castel Vecchio
+7. Visualizzare il nome e l’indirizzo dei musei con Prezzo adulti inferiore a 12 euro
+8. Visualizzare il nome dei musei che si trovano a Verona, Venezia o Padova
+9. Visualizzare il nome dei musei di Verona con giorno di chiusura diverso da domenica
+10. Visualizzare il nome dei musei con prezzo adulti tra 5 e 10 euro
+11. Visualizzare in ordine alfabetico il nome e la città di tutti i musei
+12. Trovare il prezzo adulti massimo dei musei di Verona
+13. Trovare il prezzo adulti medio dei musei di Verona o Venezia
+14. Trovare il prezzo medio dei musei che non sono a Padova
+15. Contare tutte le opere presenti nella tabella Opera
+16. Contare tutti i musei presenti a Verona
+17. Visualizzare cognome e nome dei diversi autori presenti nella tabella Opera
+18. Contare le diverse città del Veneto dove sono presenti dei musei
+19. Visualizzare le informazioni relative alle mostre presenti in ogni museo di Verona
+20. Per ogni museo di Verona, visualizzare nome, indirizzo, numero di telefono e titolo delle esposizioni presenti
+21. Per ogni museo visualizzare nome, città, titolo delle esposizioni con biglietto d’ingresso inferiore a 5 euro
+22. Per ogni museo di Verona, visualizzare nome, giorno di chiusura e orario di apertura nel week-end
+23. Visualizzare le opere presenti nei musei che non chiudono di domenica.
+24. Visualizzare il numero di mostre presenti nei musei di Verona o Venezia il 10/02/2003
+25. Visualizzare il nome e il numero di telefono dei musei di Venezia che hanno mostre con prezzo intero inferiore a 10 euro
