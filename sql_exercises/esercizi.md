@@ -237,8 +237,7 @@ INNER JOIN Opera ON (Opera.Museo = Museo.Nome AND Opera.Citta = Museo.Citta)
 )
 WHERE (Orario.Giorno = "Sabato" OR Orario.Giorno = "Domenica")
 
-24. Visualizzare il numero di mostre presenti nei musei di Verona o Venezia il 10/02/2020.
-
+24. Visualizzare il numero di mostre presenti nei musei di Verona o Venezia il 10/02/2020.  
 SELECT Mostra.Titolo, Mostra.InizioEsposizione, Mostra.FineEsposizione FROM (Museo INNER JOIN Mostra ON Museo.Nome = Mostra.Museo AND Museo.Citta = Mostra.Citta) WHERE (Museo.Citta = "Verona" OR Museo.citta = "Venezia")
 AND Mostra.InizioEsposizione <= '2020/02/10'
 AND Mostra.FineEsposizione >= '2020/02/10'
