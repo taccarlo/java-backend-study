@@ -209,19 +209,19 @@ SELECT COUNT(Nome) FROM opera;
 16. Contare tutti i musei presenti a Verona.  
 SELECT COUNT(Nome) FROM museo WHERE Citta = "Verona";
 
-17. Visualizzare cognome e nome dei diversi autori presenti nella tabella Opera. 
+17. Visualizzare cognome e nome dei diversi autori presenti nella tabella Opera.  
 SELECT DISTINCT NomeAutore, CognomeAutore FROM opera;
 
-18. Contare le diverse città del Veneto dove sono presenti dei musei.
+18. Contare le diverse città del Veneto dove sono presenti dei musei.  
 SELECT COUNT(*) FROM (SELECT DISTINCT Citta FROM museo);
 
-19. Visualizzare le informazioni relative alle mostre presenti in ogni museo di Verona. 
+19. Visualizzare le informazioni relative alle mostre presenti in ogni museo di Verona.  
 SELECT COUNT(*) FROM (SELECT DISTINCT Citta FROM museo) as number;
 
-20. Per ogni museo di Verona, visualizzare nome, indirizzo, numero di telefono e titolo delle esposizioni presenti. 
+20. Per ogni museo di Verona, visualizzare nome, indirizzo, numero di telefono e titolo delle esposizioni presenti.  
 SELECT Mostra.Titolo, Museo.Nome, Museo.Indirizzo, Museo.NumeroTel  FROM (Museo INNER JOIN Mostra ON (Mostra.Museo = Museo.Nome AND Mostra.Citta = Museo.Citta));
 
-21. Per ogni museo visualizzare nome, città, titolo delle esposizioni con biglietto d’ingresso inferiore a 5 euro.
+21. Per ogni museo visualizzare nome, città, titolo delle esposizioni con biglietto d’ingresso inferiore a 5 euro.  
 SELECT Museo.Nome, Museo.Citta, Mostra.Titolo FROM (Museo INNER JOIN Mostra ON (Mostra.Museo  = Museo.Nome AND Mostra.Citta = Museo.Citta) ) WHERE Museo.PrezzoAdulti <10.0
 
 22. Per ogni museo di Verona, visualizzare nome, giorno di chiusura e orario di apertura nel week-end.  
